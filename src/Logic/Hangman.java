@@ -1,6 +1,7 @@
 package Logic;
 
 import java.io.IOException;
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class Hangman {
@@ -15,6 +16,7 @@ public class Hangman {
         switch (option)
         {
             case 1:
+
                 System.out.println("Game");
                 break;
             case 2:
@@ -22,14 +24,18 @@ public class Hangman {
         }
 
         CorrectWords correctWords = new CorrectWords();
+        InputGame inputGame = new InputGame();
         ListWords file = new ListWords();
-        String filepath = "resources/words.txt";
         file.correctWords=correctWords;
+        inputGame.correctWords = correctWords;
+
+        String filepath = "resources/words.txt";
+
         file.PrintWords(filepath);
 
 
-        System.out.println("Слово для игры "+correctWords.getWord()+"\n\n");
 
+        inputGame.Enter_char();
 
 
 
