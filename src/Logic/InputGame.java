@@ -25,6 +25,8 @@ public class InputGame {
 
         char[] result = Unknow_word();
         int attempts =6;
+        boolean win = false;
+        boolean lose = false;
         while (attempts > 0&&(!Arrays.equals(result, word.toCharArray())))
         {
             System.out.println("Current condition: "+Arrays.toString(result));
@@ -47,6 +49,7 @@ public class InputGame {
             if(Arrays.equals(result, word.toCharArray()))
             {
                 System.out.println("You win");
+                win = true;
                 return;
             }
         }
@@ -54,8 +57,9 @@ public class InputGame {
         {
             System.out.println("You lost");
             System.out.println("The word is: "+word);
+            lose = true;
         }
-        sc.close();
+
 
     }
 }
