@@ -8,8 +8,14 @@ import java.util.List;
 import java.util.Random;
 
 class ListWords {
+    CorrectWords correctWords;
+
+
+
+
     public void PrintWords(String filepath) throws IOException
     {
+
         List<String> words = new ArrayList<>();
         try(BufferedReader br = new BufferedReader(new FileReader(filepath)))
         {
@@ -28,7 +34,11 @@ class ListWords {
         Random rand = new Random();
         int random_index = rand.nextInt(wordArray.length);
         String word = wordArray[random_index];
-        System.out.println(word);
+        if (correctWords != null) {
+            correctWords.correctWord(word);
+        } else {
+            System.out.println("NULL");
+        }
     }
 
 }
